@@ -87,6 +87,21 @@ public class ObjectsExercise {
         UI.clearPanes();
         lamps = null;
     }
+    
+    public void runLights() {
+        boolean running;
+        while (running=true) {
+            maxLamps = 1;
+            for (int i = 0; i < MAXROWS; i++) {
+                for (int j = 0; j < maxLamps; j++) {
+                    lamps[i][j].changeColor();
+                    lamps[i][j].draw();
+                }
+                maxLamps += 2;
+            }
+            UI.sleep(500);
+        }
+    }
 
     // Main
     /** Create a new ObjectExercise object and setup the interface */
@@ -95,7 +110,9 @@ public class ObjectsExercise {
 
         UI.addButton("Clear", oe::clear );
         UI.addButton("Lamps", oe::createLamps );
-        UI.addButton("Quit", UI::quit );        
+        UI.addButton("Quit", UI::quit );
+        UI.addButton("Run lights", oe::runLights );
+
     }
 
 }

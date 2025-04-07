@@ -118,6 +118,6 @@ public class Lamp{
      */
     public void changeColor(){
         /*# YOUR CODE HERE */
-        col = new Color((float)Math.random(), (float)Math.random(), (float)Math.random());
+        col = Color.getHSBColor((float)(Math.random()), 1.0f, 1.0f);
     }   
 }
